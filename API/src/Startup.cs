@@ -6,7 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace dotnet_gql_test
+using CampusTEC.Schemas;
+
+namespace CampusTEC
 {
   public class Startup
   {
@@ -21,10 +23,10 @@ namespace dotnet_gql_test
       // Add GraphQL Services
       services
         .AddDataLoaderRegistry()
-        .AddGraphQL(SchemaBuilder
-            .New()
+        .AddGraphQL(SchemaBuilder.New()
             // Here, we add the LocationQueryType as a QueryType
-            .AddQueryType<LocationQueryType>()
+            
+            .AddQueryType<QueryType>()
             .Create());
     }
 

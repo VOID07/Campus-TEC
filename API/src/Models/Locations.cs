@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace dotnet_gql_test
+namespace CampusTEC.Models
 {
   [Table("Locations")]
   public class Locations

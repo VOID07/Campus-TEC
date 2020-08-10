@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using CampusTEC.Models;
 
-namespace dotnet_gql_test
+namespace CampusTEC
 {
   public class MyDbContext: DbContext
   {
@@ -10,6 +11,8 @@ namespace dotnet_gql_test
     {}
 
     public DbSet<Locations> Location { get; set; }
+
+    public DbSet<Estudiantes> Estudiante { get; set; }
 
   }
 }
