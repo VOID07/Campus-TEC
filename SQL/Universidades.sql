@@ -1,6 +1,4 @@
-CREATE TABLE Universidades (
-    ID int IDENTITY(1,1) PRIMARY KEY,
-    Nombre_Universidad varchar(100) NOT NULL
+CREATE TABLE Universidades(
+    ID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    Nombre_Universidad varchar(50) NOT NULL
 );
-
-

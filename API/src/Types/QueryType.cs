@@ -10,13 +10,11 @@ namespace CampusTEC.Schemas
       base.Configure(descriptor);
 
       descriptor
-        .Field(f => f.GetLocations(default))
-        .UseFiltering();
-
-      descriptor
-          .Field(f => f.GetEstudiantes(default))
-          .UseFiltering()
-          ;
+          .Field(f => f.GetEstudiante(default, default, default))
+          .Argument("carne", a => a.Type<IntType>())
+          .Argument("pin", a => a.Type<IntType>())
+          .UseFiltering();
+          
     }
   }
 }

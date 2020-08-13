@@ -9,21 +9,20 @@ using CampusTEC.Models;
 
 namespace CampusTEC.Queries
 {
-    public class Query{
-        public async Task<List<Locations>> GetLocations([Service] MyDbContext dbContext) =>
-        await dbContext
-            .Location
-            .AsNoTracking()
-            .OrderBy(o => o.Name)
-            .ToListAsync();
-        
+    public class Query
+    {
+        public async Task<List<Estudiante>> GetEstudiante([Service] CampusTEC dbContext, int carne, int pin) =>
+      await dbContext
+        .Estudiantes
+        .AsNoTracking()
+        .Where(w => w.Carne == carne && w.Pin == pin)
+        .ToListAsync();
 
-        public async Task<List<Estudiantes>> GetEstudiantes([Service] MyDbContext dbContext) =>
-        await dbContext
-            .Estudiante
-            .AsNoTracking()
-            .OrderBy(o => o.ID)
-            .ToListAsync();  
-
+      //   public async Task<List<Universidad>> GetUniversidad([Service] CampusTEC dbContext, int ID) =>
+      // await dbContext
+      //   .Uni
+      //   .AsNoTracking()
+      //   .Where(w => w.ID == ID )
+      //   .ToListAsync();
     }
 }

@@ -9,5 +9,8 @@ CREATE TABLE Estudiantes(
     Email_2 VARCHAR (50) NOT NULL,
     Telefono INT NOT NULL,
     Foto VARCHAR(255) NOT NULL,
-    Cantidad_TEColones int NOT NULL
+    Cantidad_TEColones int NOT NULL,
+    Nombre_Sede varchar(50) NOT NULL,
+    Nombre_Universidad varchar(100) NOT NULL,
+    Nombre_Rol varchar(50) NOT NULL
 );
