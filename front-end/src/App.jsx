@@ -1,14 +1,31 @@
 import React from "react";
 import { Provider } from "react-redux";
-import Login from "./componets/login";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
-import store from "./store/index"
+import Login from "./componets/login";
+import store from "./store/index";
 import "./App.css";
 
 function App() {
   return (
     <Provider store={store}>
-      <Login />
+      <Router>
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/profile">
+            <div><p>Este es el perfil</p></div>
+          </Route>
+          <Route path="/" exact>
+            <Login />
+          </Route>
+        </Switch>
+      </Router>
     </Provider>
   );
 }

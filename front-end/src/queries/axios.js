@@ -15,7 +15,7 @@ const postUserPassEstudiante = (user, pass) => {
         query: query,
       })
       .then((res) => {
-        resolve(res.data.data.estudiante);
+        resolve(res.data.data);
       })
       .catch((error) => {
         console.error(error);

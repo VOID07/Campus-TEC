@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Navbar from "react-bootstrap/Navbar";
 import { connect } from "react-redux";
+import { Route, Redirect, useLocation } from "react-router-dom";
 
 import { setUserPass } from "./../../store/tipo_usuario/action";
 import "./login.css";
@@ -18,6 +19,7 @@ class Login extends React.Component {
       tipo_usuario: 1,
       user: "",
       password: "",
+      logged: false
     };
     this.setUser = this.setUser.bind(this);
     this.setPassword = this.setPassword.bind(this);
@@ -58,15 +60,16 @@ class Login extends React.Component {
           );
           break;
       }
-      if (response.length === 0) {
+      if (response === undefined) {
         alert("Datos de usuario inválidos");
       } else {
         this.props.setUserPass(this.state.user, this.state.password);
+        this.setState({logged: true});
       }
     }
   }
 
-  render() {
+  renderLogin(){
     return (
       <Container className="App">
         <Container>
@@ -162,6 +165,23 @@ class Login extends React.Component {
         </Container>
       </Container>
     );
+  }
+
+  redirectToProfile(){
+    return(
+       <Redirect
+            to={{
+              pathname: "/profile"
+            }}
+          />
+    );
+  }
+
+  render() {
+    return(
+    this.state.logged ? this.redirectToProfile() : this.renderLogin()
+    );
+    
   }
 }
 
