@@ -1,9 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using HotChocolate.AspNetCore.Authorization;
 
 namespace CampusTEC.Models
 {
     [Table("Estudiantes")]
+    [Authorize]
     public class Estudiante
 
     {

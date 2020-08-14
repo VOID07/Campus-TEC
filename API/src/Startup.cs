@@ -31,6 +31,7 @@ namespace CampusTEC
                   // Here, we add the LocationQueryType as a QueryType
 
                   .AddQueryType<QueryType>()
+                  .AddAuthorizeDirectiveType()
                   .Create(),
                   new QueryExecutionOptions { ForceSerialExecution = true });
         }
