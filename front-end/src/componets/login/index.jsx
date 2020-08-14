@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Navbar from "react-bootstrap/Navbar";
 import { connect } from "react-redux";
-import { Route, Redirect, useLocation } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import { setUserPass } from "./../../store/tipo_usuario/action";
 import "./login.css";
@@ -21,6 +21,7 @@ class Login extends React.Component {
       password: "",
       logged: false
     };
+    this.setUserType = this.setUserType.bind(this);
     this.setUser = this.setUser.bind(this);
     this.setPassword = this.setPassword.bind(this);
     this.checkUserPass = this.checkUserPass.bind(this);
