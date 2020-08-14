@@ -1,0 +1,69 @@
+
+.App {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: space-between;
+  }
+  
+  .Logo {
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-left: 30px;
+    flex-direction: column;
+    font-family: "Mulish", sans-serif;
+    font-size: calc(5px + 1vmin);
+    background-color: #153c6c;
+    color: white;
+    text-align: center;
+    border-radius: 4px 4px 0px 0px;
+  }
+  .logoEdit {
+    width: 150px;
+  }
+  
+  .NavBarTop {
+    background-color: #153c6c;
+  }
+  .NavBarBot {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #153c6c;
+    height: 50px;
+  }
+  
+  .Form {
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Card {
+    align-self: center;
+    width: 25rem;
+    height: 28.5rem;
+    margin-top: calc(50px + 5rem);
+    margin-bottom: 60px;
+  }
+  
+  .CardBody {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  
+  .checkBoxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .loginBtn {
+    background-color: #153c6c;
+  }
+  

@@ -4,13 +4,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Navbar from "react-bootstrap/Navbar";
+import { connect } from "react-redux";
 
+import { setUserPass } from "./../../store/tipo_usuario/action";
+import "./login.css";
 import logo from "../../img/logo.svg";
+import postUserPassEstudiante from "./../../queries/axios";
 // import setUserType from "../../store/tipo_usuario/action"
-
-const axios = require("axios").default;
-
-export default class Login extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,6 +21,7 @@ export default class Login extends React.Component {
     };
     this.setUser = this.setUser.bind(this);
     this.setPassword = this.setPassword.bind(this);
+    this.checkUserPass = this.checkUserPass.bind(this);
   }
 
   setUserType(tipo_usuario) {
@@ -28,30 +30,40 @@ export default class Login extends React.Component {
     });
   }
 
-  setUser(event) {
-    console.log(event.target.value);
-    this.setState({ user: event.target.value });
+  setUser(user) {
+    this.setState({ user });
   }
 
-  setPassword(event) {
-    console.log(event.target.value);
-    this.setState({ password: event.target.value });
+  setPassword(password) {
+    this.setState({ password });
   }
 
-  checkUserPass() {
-    axios
-      .get("/user?ID=12345")
-      .then(function (response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .then(function () {
-        // always executed
-      });
+  async checkUserPass() {
+    if (this.state.user === "" || this.state.password === "") {
+      alert("Introduzca un usuario y contraseña");
+    } else {
+      let response = [];
+      switch (this.state.tipo_usuario) {
+        case 1:
+          response = await postUserPassEstudiante(
+            this.state.user,
+            this.state.password
+          );
+          break;
+
+        default:
+          response = await postUserPassEstudiante(
+            this.state.user,
+            this.state.password
+          );
+          break;
+      }
+      if (response.length === 0) {
+        alert("Datos de usuario inválidos");
+      } else {
+        this.props.setUserPass(this.state.user, this.state.password);
+      }
+    }
   }
 
   render() {
@@ -80,10 +92,10 @@ export default class Login extends React.Component {
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Usuario</Form.Label>
                   <Form.Control
-                    type="email"
+                    type="text"
                     placeholder="Usuario TEC"
                     value={this.state.user}
-                    onChange={this.setUser}
+                    onChange={(event) => this.setUser(event.target.value)}
                   />
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">
@@ -92,7 +104,7 @@ export default class Login extends React.Component {
                     type="password"
                     placeholder="Contraseña"
                     value={this.state.password}
-                    onChange={this.setPassword}
+                    onChange={(event) => this.setPassword(event.target.value)}
                   />
                 </Form.Group>
                 <div>
@@ -133,8 +145,8 @@ export default class Login extends React.Component {
                 </div>
                 <div className="d-flex justify-content-center">
                   <Button
-                    onClick={this.checkCredentials}
-                    type="submit"
+                    onClick={this.checkUserPass}
+                    type="button"
                     className="loginBtn"
                   >
                     ENTRAR
@@ -152,3 +164,5 @@ export default class Login extends React.Component {
     );
   }
 }
+
+export default connect(null, { setUserPass })(Login);

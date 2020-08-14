@@ -1,14 +1,19 @@
-const initialState = { tipo_usuario: 0};
+import { SET_USER_PASSWORD } from "./../actionTypes";
+// Estado inicial con valores por defecto
+const initialState = {
+  tipo_usuario: 1,
+  user: "",
+  password: "",
+};
 
-export default (state = initialState, action) => {
-    if (action.type === "UPDATE_USER_TYPE"){
-        return {
-            ... state,
-            tipo_usuario: action.payload
-        }
-    }
-
-    return state;
+// Dependiendo del action que se vaya a realizar, asigna los valores al estado
+export default function (state = initialState, action) {
+  if (action.type === SET_USER_PASSWORD){
+      return {
+        ...state,
+        user: action.payload.user,
+        password: action.payload.password,
+      };
+  }
+  return state;
 }
-
-export const tipoUsuario = state => state.
