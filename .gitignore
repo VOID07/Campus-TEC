@@ -19,6 +19,7 @@ obj/
 !.vscode/extensions.json
 *.code-workspace
 
+
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
@@ -149,5 +150,3 @@ node_modules
 psd
 thumb
 sketch
-
-# End of https://www.toptal.com/developers/gitignore/api/node,react
