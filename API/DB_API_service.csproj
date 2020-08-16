@@ -11,6 +11,7 @@
     <PackageReference Include="HotChocolate.Types.Filters" Version="10.4.3" />
     <PackageReference Include="HotChocolate.Types.Selections" Version="10.4.3" />
     <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="10.4.3" />
+    <PackageReference Include="LiveSharp" Version="1.5.66" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
   </ItemGroup>

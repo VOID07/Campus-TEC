@@ -1,6 +1,3 @@
-INSERT INTO Universidades(Nombre_Universidad)
-VALUES('Instituto X-Tecnológico de Costa Rica')
-
 INSERT INTO Estudiantes
     (Carne, Nombre_estudiante, Apellido_estudiante, Pin, Activo, Email_1, Email_2, Telefono, Foto, Cantidad_TEColones, Nombre_Rol, Nombre_Universidad, Nombre_Sede)
 VALUES
@@ -13,7 +10,7 @@ VALUES
         'krojas96ce@gmail.com',
         'NULL',
         87660519,
-        'NULL',
+        'https://campustecfilesystem.blob.core.windows.net/profilepics/dago.jpg',
         100,
         'Estudiante',
         'Instituto X-Tecnológico de Costa Rica',
@@ -32,7 +29,7 @@ VALUES
         'yenmari11@gmail.com',
         'yediaz@estudiantec.cr',
         86179000,
-        'NULL',
+        'https://campustecfilesystem.blob.core.windows.net/profilepics/yen.jpg',
         1000,
         'Estudiante',
         'Instituto X-Tecnológico de Costa Rica',
@@ -51,7 +48,7 @@ VALUES
         'bakkim05@gmail.com',
         'bakkim@estudiantec.cr',
         72971790,
-        'NULL',
+        'https://campustecfilesystem.blob.core.windows.net/profilepics/jung.jpg',
         99999,
         'Estudiante',
         'Instituto X-Tecnológico de Costa Rica',

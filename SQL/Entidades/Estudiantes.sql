@@ -1,6 +1,6 @@
 CREATE TABLE Estudiantes(
-    ID INT IDENTITY(1,1) NOT NULL,
-    Carne INT NOT NULL PRIMARY KEY,
+    EstudianteId INT IDENTITY(1,1) NOT NULL  PRIMARY KEY,
+    Carne INT NOT NULL,
     Nombre_estudiante varchar(50) NOT NULL,
     Apellido_estudiante varchar(50) NOT NULL,
     Pin INT NOT NULL,

@@ -1,0 +1,186 @@
+# The cost directives is used to express the complexity of a field.
+directive @cost(
+  # Defines the complexity of the field.
+  complexity: Int! = 1
+  # Defines field arguments that act as complexity multipliers.
+  multipliers: [MultiplierPath!]
+) on FIELD_DEFINITION
+type Actividades {
+  actividadId: Int!
+  comentarios: [Comentarios]
+  descripcion: String
+  nombre: String
+  objetivos: [ActividadesXObjetivo]
+  retos: [ActividadesXRetos]
+  semana: Int!
+}
+
+type ActividadesXObjetivo {
+  actividadesXObjetivoId: Int!
+  actividadId: Int!
+  objetivoId: Int!
+}
+
+type ActividadesXRetos {
+  actividadesXRetosId: Int!
+  actividadId: Int!
+  retoId: Int!
+}
+
+type Administrador {
+  activo: Boolean!
+  administradorId: Int!
+  apellido: String
+  identificador: Int!
+  nombre: String
+  nombreRol: String
+  pin: Int!
+  retosInstitucionales: [RetosInstitucionales]
+}
+
+type Archivos {
+  archivo: String
+  archivoId: Int!
+}
+
+type Comentarios {
+  actividadId: Int!
+  archivo: Archivos
+  comentario: String
+  comentarioId: Int!
+}
+
+type Curso {
+  codigoCurso: String
+  cursoId: Int!
+  nombreCurso: String
+  objetivos: [Objetivos]
+  profesor: Profesor
+}
+
+type EstadoActividadesEstudiante {
+  actividad: Actividades
+  completado: Boolean!
+  estadoActividadesEstudianteId: Int!
+  estudiante: Estudiante
+}
+
+type EstadoRetosEstudiante {
+  completado: Boolean!
+  estadoRetosEstudianteId: Int!
+  estudiante: Estudiante
+  reto: Retos
+}
+
+type EstadoRetosInstEstudiante {
+  completado: Boolean!
+  estadoRetoInstEstudianteId: Int!
+  estudiante: Estudiante
+  retoInstitucional: RetosInstitucionales
+}
+
+type Estudiante {
+  activo: Boolean!
+  apellido_estudiante: String
+  cantidad_TEColones: Int!
+  carne: Int!
+  comentarios: [Comentarios]
+  email_1: String
+  email_2: String
+  estadoActividades: [EstadoActividadesEstudiante]
+  estadoRetos: [EstadoRetosEstudiante]
+  estudianteId: Int!
+  foto: String
+  iD: Int!
+  matriculas: [Matricula]
+  nombre_estudiante: String
+  nombre_Rol: String
+  nombre_Sede: String
+  nombre_Universidad: String
+  pin: Int!
+  tareas: [Tareas]
+  telefono: Int!
+}
+
+type Matricula {
+  curso: Curso
+  estudiante: Estudiante
+  matriculaId: Int!
+}
+
+# The multiplier path scalar represents
+ a valid GraphQL multiplier path string.
+scalar MultiplierPath
+
+type Objetivos {
+  actividades: [Actividades]
+  curso: Curso
+  descripcion: String
+  nombre: String
+  objetivoId: Int!
+  retos: [Retos]
+}
+
+type Profesor {
+  activo: Boolean!
+  apellidoProfesor: String
+  carne: Int!
+  comentarios: [Comentarios]
+  cursos: [Curso]
+  email_1: String
+  email_2: String
+  foto: String
+  nombreProfesor: String
+  nombreRol: String
+  pin: Int!
+  profesorId: Int!
+  telefono: Int!
+}
+
+type Query {
+  administador(identificador: Int!, pin: Int!): [Administrador]
+  estadoRetosEstudiante: [EstadoRetosEstudiante]
+  estadoRetosInst: [EstadoRetosInstEstudiante]
+  estudiante(carne: Int!, pin: Int!): [Estudiante]
+  profesor(carne: Int!, pin: Int!): [Profesor]
+}
+
+type Retos {
+  actividades: [Actividades]
+  comentarios: [Comentarios]
+  descripcion: String
+  nombre: String
+  objetivos: [RetosXObjetivo]
+  recompensa: Int!
+  retoId: Int!
+  semana: Int!
+}
+
+type RetosInstitucionales {
+  activo: Boolean!
+  administrador: Administrador
+  descripcion: String
+  nombre: String
+  retoInstitucionalId: Int!
+}
+
+type RetosXObjetivo {
+  objetivoId: Int!
+  retoId: Int!
+  retosXObjetivoId: Int!
+}
+
+type Tareas {
+  actividad: Actividades
+  comentarios: [Comentarios]
+  descripcion: String
+  dia: Int!
+  estado: Boolean!
+  estudiante: Estudiante
+  hFinal: Int!
+  hInicio: Int!
+  nombre: String
+  semana: Int!
+  tareaId: Int!
+}
+
