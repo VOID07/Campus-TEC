@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import Login from "./componets/login";
+import PerfilEstudiante from "./componets/perfil-estudiante"
 import store from "./store/index";
 import "./App.css";
 
@@ -19,7 +20,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/profile">
-            <div><p>Este es el perfil</p></div>
+            <PerfilEstudiante/>
           </Route>
           <Route path="/" exact>
             <Login />
