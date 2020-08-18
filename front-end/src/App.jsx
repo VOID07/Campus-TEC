@@ -12,6 +12,7 @@ import Page404 from "./componets/page404"
 import store from "./store/index";
 import "./App.css";
 import PerfilProfesor from "./componets/perfil-professor";
+import ProfesorCursos from "./componets/ProfesorCursos";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Route path="/404"><Page404 /></Route>
           <Route path="/perfilProf"><PerfilProfesor /> </Route>
           <Route path="/ProfesorCursos">
-            <div><p>Cursos profesor</p></div></Route>
+          <ProfesorCursos /></Route>
           <Route path="/ProfesorNuevoReto">
             <div><p>Crear Nuevo Reto</p></div></Route>
           <Route path="/ProfesorNuevaActividad">
