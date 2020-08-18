@@ -81,6 +81,7 @@ class ProfesorCursos extends React.Component {
               </div>
             </div>
             <Card.Body className="CardBody">
+            <h6>10000 TEC Colones</h6>
             </Card.Body>
           </Card>
           <Card className="CardObjetivo">
@@ -91,6 +92,23 @@ class ProfesorCursos extends React.Component {
             </div>
             <Card.Body className="CardBody">
               <Button variant="link" type="button" className="buttonEdit">Editar</Button>
+              <p>Desarrollar propuestas de solución para el 
+                caso de estudio basado en documentación
+                técnica y criterio crítico.
+              </p>
+              <p>Elaborar soluciones usando totalmente o en su 
+                mayoría circuitos y dispositvos analógicos.
+              </p>
+              <p>Seleccionar la mejor solución según el caso 
+                o problema que se tenga bajo estudio.
+              </p>
+              <p>Integrar uno o varios sensores a sistemas
+                de control sencillos, con presentación
+                de datos en computador inclusive.
+              </p>
+              <p>Implementar un sistema analógico de adquisión y
+                procesamiento de datos.
+              </p>
             </Card.Body>
           </Card>
         </Container>

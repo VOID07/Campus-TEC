@@ -25,8 +25,8 @@
   .buttonEdit {
     background-color: #153c6c;
     position: absolute;
-    left: 80%; /*Coordenada X*/
-    top: 8%; /*Coordenada Y*/
+    left: 85%; /*Coordenada X*/
+    top: 6%; /*Coordenada Y*/
     font-size: 16px;
     cursor: pointer;
   }
