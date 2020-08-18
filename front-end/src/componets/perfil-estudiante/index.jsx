@@ -10,8 +10,9 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
 import { setUserPass } from "./../../store/tipo_usuario/action";
-import "./login.css";
+import "./perfil-estudiante.css";
 import logo from "../../img/logo.svg";
+import { NavigationBar } from "../NavigationBar";
 import postUserPassEstudiante from "./../../queries/axios";
 
 // import setUserType from "../../store/tipo_usuario/action"
@@ -31,49 +32,25 @@ class PerfilEstudiante extends React.Component {
   }
 
 
-  renderLogin(){
+  renderPerfilEstudiante(){
     return (
-      <Container className="App">
-        <Container>
-          <Navbar className="NavBarTop" fixed="top">
-            <Col md={6}>
-              <Navbar.Brand href="#">
-                <div>
-                  <img src={logo} alt="logo" className="logoEdit" />
-                </div>
-              </Navbar.Brand>
-            </Col>
-            <Col md={{span:2, offset:4}}>
-              <div>
-                <Button variant="light">Cerrar Sessión</Button>
-              </div>
-            </Col>
-
-          </Navbar>
-        </Container>
-
         <Container fluid>
-          <Row>
-            <Col>
-              <Row>
-                <Col>
-                  Imagen
-                </Col>
-                <Col>
-                  Información Personal
-                </Col>
-              </Row>
-              <Row>
-                Información Contacto
-              </Row>
-            </Col>
-            <Col>
-              Cursos Matriculados
-            </Col>
-          </Row>
-        </Container>
+          <NavigationBar/>
 
-      </Container>
+          <Container>
+              <Col>
+                  <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </p>
+              </Col>
+              <Col>
+                  <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </p>
+              </Col>
+          </Container>
+
+        </Container>
     );
   }
 
@@ -81,7 +58,7 @@ class PerfilEstudiante extends React.Component {
     return(
        <Redirect
             to={{
-              pathname: "/login"
+              pathname: "/"
             }}
           />
     );
@@ -89,7 +66,7 @@ class PerfilEstudiante extends React.Component {
 
   render() {
     return(
-    this.state.logged ? this.renderLogin() : this.redirectToProfile()
+    this.state.logged ? this.renderPerfilEstudiante() : this.redirectToLogin()
     );
     
   }

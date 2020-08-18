@@ -16,15 +16,8 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/profile">
-            <PerfilEstudiante/>
-          </Route>
-          <Route path="/" exact>
-            <Login />
-          </Route>
+          <Route path="/" exact> <Login /> </Route>
+          <Route path="/profile"><PerfilEstudiante/> </Route>
         </Switch>
       </Router>
     </Provider>
