@@ -37,9 +37,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="892ddf93-a83a-4b7b-8537-79ecc993c541" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/src/img/liam.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/componets/perfil-estudiante/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/componets/perfil-estudiante/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/queries/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/queries/axios.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597637076269</updated>
-      <workItem from="1597637078828" duration="28394000" />
+      <workItem from="1597637078828" duration="29688000" />
     </task>
     <servers />
   </component>

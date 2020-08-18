@@ -32,6 +32,10 @@ class PerfilEstudiante extends React.Component {
     this.setState({ logged });
   }
 
+  componentDidMount(){
+    let infoPerfil = 
+  }
+
 
   renderPerfilEstudiante(){
     return (
