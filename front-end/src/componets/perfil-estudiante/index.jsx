@@ -2,7 +2,6 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -11,7 +10,6 @@ import { Redirect } from "react-router-dom";
 
 import { setProfileEstudiante } from "./../../store/perfil/action";
 import "./perfil-estudiante.css";
-import liam from "../../img/liam.jpg";
 import { NavigationBar } from "../NavigationBar";
 import { infoPerfilEstudiante } from "./../../queries/axios";
 // import setUserType from "../../store/tipo_usuario/action"

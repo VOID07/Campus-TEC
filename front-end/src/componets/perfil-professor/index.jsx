@@ -2,14 +2,13 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Table from "react-bootstrap/Table";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-import { setProfileProfesor } from "./../../store/perfil/action";
+import { setProfileProfesor } from "./../../store/perfil_profesor/action";
 import "./perfil-professor.css";
 import { ProfessorBar } from "../ProfessorBar";
 import { infoPerfilProfesor } from "./../../queries/axios";
@@ -24,6 +23,7 @@ class PerfilProfesor extends React.Component {
       logged: true,
       profesor: {},
       cursos: [],
+      lodadedProps: false,
     };
     this.setLogged = this.setLogged.bind(this);
   }
@@ -35,6 +35,7 @@ class PerfilProfesor extends React.Component {
   async fetchProfile() {}
 
   async componentDidMount() {
+    console.log(this.state);
     let response = await infoPerfilProfesor(
       this.state.user,
       this.state.password
@@ -43,6 +44,7 @@ class PerfilProfesor extends React.Component {
     if (response === undefined) {
       console.log("Error fetching");
     } else {
+      console.log(response.profesor[0]);
       this.props.setProfileProfesor({ profesor: response.profesor[0] });
       this.setState({ profesor: response.profesor[0], lodadedProps: true });
     }
@@ -88,9 +90,7 @@ class PerfilProfesor extends React.Component {
                         <Form.Control
                           plaintext
                           readOnly
-                          defaultValue={
-                            this.state.profesor.apellidoProfesor
-                          }
+                          defaultValue={this.state.profesor.apellidoProfesor}
                         />
                       </Col>
                     </Form.Group>
@@ -113,13 +113,19 @@ class PerfilProfesor extends React.Component {
             <Col md={{ span: 6 }}>
               <div className="sectionTitle">Cursos</div>
               <div>
-                <Container striped bordered hover size="sm">
-                  {this.state.lodadedProps ? this.state.profesor.cursos.map(cursos =>(
-                    <Row>
-                      <Col>{cursos.nombreCurso}</Col>
-
-                    </Row>
-                  )): <Row></Row>}
+                <Container size="sm">
+                <Row>
+                    <Col>Curso</Col>
+                  </Row>
+                  {this.state.lodadedProps ? (
+                    this.state.profesor.cursos.map((cursos) => (
+                      <Row>
+                        <Col>{cursos.nombreCurso}</Col>
+                      </Row>
+                    ))
+                  ) : (
+                    <Row></Row>
+                  )}
                 </Container>
               </div>
             </Col>
@@ -183,8 +189,7 @@ class PerfilProfesor extends React.Component {
                 </Container>
               </div>
             </Col>
-            <Col md={{ span: 6 }}>
-            </Col>
+            <Col md={{ span: 6 }}></Col>
           </Row>
         </Container>
       </Container>
@@ -192,9 +197,7 @@ class PerfilProfesor extends React.Component {
   }
 
   redirectToLogin() {
-    return (
-      <Redirect to={{ pathname: "/", }}/>
-    );
+    return <Redirect to={{ pathname: "/" }} />;
   }
 
   render() {
@@ -207,6 +210,4 @@ const mapStateToProps = (state) => {
   return state.login;
 };
 
-export default connect(mapStateToProps, { setProfileProfesor })(
-  PerfilProfesor
-);
+export default connect(mapStateToProps, { setProfileProfesor })(PerfilProfesor);

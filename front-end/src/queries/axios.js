@@ -78,6 +78,7 @@ export const infoPerfilProfesor = (user,pass) => {
     email_2
     telefono
   }
+}
   `;
     return new Promise((resolve) => {
         axios_

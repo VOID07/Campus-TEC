@@ -10,7 +10,7 @@ import { Redirect } from "react-router-dom";
 import { setUserPass } from "./../../store/tipo_usuario/action";
 import "./login.css";
 import logo from "../../img/logo.svg";
-import {postUserPassEstudiante} from "./../../queries/axios";
+import { postUserPassEstudiante } from "./../../queries/axios";
 // import setUserType from "../../store/tipo_usuario/action"
 class Login extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Login extends React.Component {
       tipo_usuario: 1,
       user: "",
       password: "",
-      logged: false
+      logged: false,
     };
     this.setUserType = this.setUserType.bind(this);
     this.setUser = this.setUser.bind(this);
@@ -54,6 +54,13 @@ class Login extends React.Component {
           );
           break;
 
+        case 2:
+          response = await postUserPassEstudiante(
+            this.state.user,
+            this.state.password
+          );
+          break;
+
         default:
           response = await postUserPassEstudiante(
             this.state.user,
@@ -65,12 +72,12 @@ class Login extends React.Component {
         alert("Datos de usuario inválidos");
       } else {
         this.props.setUserPass(this.state.user, this.state.password);
-        this.setState({logged: true});
+        this.setState({ logged: true });
       }
     }
   }
 
-  renderLogin(){
+  renderLogin() {
     return (
       <Container className="App">
         <Container>
@@ -168,21 +175,38 @@ class Login extends React.Component {
     );
   }
 
-  redirectToProfile(){
-    return(
-       <Redirect
+  redirectToProfile() {
+    switch (this.state.tipo_usuario) {
+      case 1:
+        return (
+          <Redirect
             to={{
-              pathname: "/profile"
+              pathname: "/profile",
             }}
           />
-    );
+        );
+      case 2:
+        return (
+          <Redirect
+            to={{
+              pathname: "/perfilProf",
+            }}
+          />
+        );
+
+      default:
+        return (
+          <Redirect
+            to={{
+              pathname: "/profile",
+            }}
+          />
+        );
+    }
   }
 
   render() {
-    return(
-    this.state.logged ? this.redirectToProfile() : this.renderLogin()
-    );
-    
+    return this.state.logged ? this.redirectToProfile() : this.renderLogin();
   }
 }
 

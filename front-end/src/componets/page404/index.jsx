@@ -1,8 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { setUserPass } from "../../store/tipo_usuario/action";
-class Page404 extends React.Component {
+export default class Page404 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,8 +34,4 @@ class Page404 extends React.Component {
     return this.state.logged ? this.renderPage404() : this.redirectToLogin();
   }
 }
-const mapStateToProps = (state) => {
-  return state.login;
-};
 
-export default connect(null, { setUserPass })(Page404);
