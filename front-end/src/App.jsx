@@ -10,7 +10,6 @@ import Login from "./componets/login";
 import store from "./store/index";
 import "./App.css";
 import ProfesorCursos from "./componets/ProfesorCursos";
-import PerfilEstudiante from "./componets/profileProf";
 
 function App() {
   return (
@@ -27,7 +26,7 @@ function App() {
           <ProfesorCursos />
           </Route>
           <Route path="/ProfesorProfile">
-          <PerfilEstudiante />
+          <div><p>Soy un perfil</p></div>
           </Route>
           <Route path="/ProfesorNuevoReto">
             <div><p>Crear Nuevo Reto</p></div>
