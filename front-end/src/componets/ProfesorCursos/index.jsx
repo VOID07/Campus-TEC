@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-
+import DropdownButton from 'react-bootstrap/DropdownButton'
 import { setUserPass } from "../../store/tipo_usuario/action";
 import "./ProfesorCursos.css";
 import logo from "../../img/logo.svg";
@@ -29,9 +29,8 @@ class ProfesorCursos extends React.Component {
     return (
 
       <Container className="App">
-        
 
-        <Button type="button" className="buttonCerrarSesion">Cerrar sesión</Button>
+        <Button onClick={this.redirectToLogin} type="button" className="buttonCerrarSesion">Cerrar sesión</Button>
         <Container>
           <Navbar className="NavBarTop" fixed="top">
             <Navbar.Brand href="#">
@@ -44,7 +43,7 @@ class ProfesorCursos extends React.Component {
 
 
         <Container>
-          <Button OnClick={this.NuevoReto}  type="button" className="buttonCrearReto">Crear Nuevo Reto</Button>
+          <Button onClick={this.redirectToNuevoReto} type="button" className="buttonCrearReto">Crear Nuevo Reto</Button>
 
           <Card className="CardProfesor">
             <div className="Columna">
@@ -61,7 +60,7 @@ class ProfesorCursos extends React.Component {
 
 
         <Container>
-          <Button type="button" className="buttonCrearActividad">Crear Nueva Actividad</Button>
+          <Button onClick={this.redirectToNuevaActividad} type="button" className="buttonCrearActividad">Crear Nueva Actividad</Button>
           <Card className="CardProfesor">
             <div className="Columna">
               <div style={{ margin: "3px" }}>
@@ -101,7 +100,17 @@ class ProfesorCursos extends React.Component {
         </Container>
 
 
+        <DropdownButton>
+          <DropdownButton.Toggle className="buttonCrearReto1"  id="dropdown-basic">
+            Dropdown Button
+  </DropdownButton.Toggle>
 
+          <DropdownButton.Menu>
+            <DropdownButton.Item  href="#/action-1">Action</DropdownButton.Item>
+            <DropdownButton.Item  href="#/action-2">Another action</DropdownButton.Item>
+            <DropdownButton.Item  href="#/action-3">Something else</DropdownButton.Item>
+          </DropdownButton.Menu>
+        </DropdownButton>
 
 
       </Container>
@@ -118,11 +127,31 @@ class ProfesorCursos extends React.Component {
     );
   }
 
-  NuevoReto() {
+  redirectToNuevoReto() {
     return (
       <Redirect
         to={{
-          pathname: "/NuevoReto"
+          pathname: "/ProfesorNuevoReto"
+        }}
+      />
+    );
+  }
+
+  redirectToNuevaActividad() {
+    return (
+      <Redirect
+        to={{
+          pathname: "/ProfesorNuevaActividad"
+        }}
+      />
+    );
+  }
+
+  redirectToLogin() {
+    return (
+      <Redirect
+        to={{
+          pathname: "/login"
         }}
       />
     );

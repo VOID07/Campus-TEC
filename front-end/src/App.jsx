@@ -25,8 +25,11 @@ function App() {
           <Route path="/ProfesorCursos">
           <ProfesorCursos />
           </Route>
-          <Route path="/NuevoReto">
-            <div><p>Este es un Nuevo Reto</p></div>
+          <Route path="/ProfesorNuevoReto">
+            <div><p>Crear Nuevo Reto</p></div>
+          </Route>
+          <Route path="/ProfesorNuevaActividad">
+            <div><p>Crear Nueva Actividad</p></div>
           </Route>
           <Route path="/" exact>
             <Login />

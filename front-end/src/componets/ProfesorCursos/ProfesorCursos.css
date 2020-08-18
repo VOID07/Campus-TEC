@@ -57,6 +57,14 @@
     cursor: pointer;
   }
 
+
+  .buttonCrearReto1 {
+    position: absolute;
+    left: 3%; /*Coordenada X*/
+    top: 15%; /*Coordenada Y*/
+    font-size: 16px;
+  }
+
   .NavBarBot {
     position: absolute;
     left: 0;
