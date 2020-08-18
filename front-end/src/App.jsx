@@ -9,6 +9,7 @@ import {
 import Login from "./componets/login";
 import store from "./store/index";
 import "./App.css";
+import ProfesorCursos from "./componets/ProfesorCursos";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/profile">
             <div><p>Este es el perfil</p></div>
+          </Route>
+          <Route path="/ProfesorCursos">
+          <ProfesorCursos />
           </Route>
           <Route path="/" exact>
             <Login />
