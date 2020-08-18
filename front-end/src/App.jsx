@@ -19,9 +19,16 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact> <Login /> </Route>
-          <Route path="/profile"><PerfilEstudiante/> </Route>
-          <Route path="/404"><Page404/></Route>
-          <Route path="/perfilProf"><PerfilProfesor/> </Route>
+          <Route path="/profile"><PerfilEstudiante /> </Route>
+          <Route path="/404"><Page404 /></Route>
+          <Route path="/perfilProf"><PerfilProfesor /> </Route>
+          <Route path="/ProfesorCursos">
+            <div><p>Cursos profesor</p></div></Route>
+          <Route path="/ProfesorNuevoReto">
+            <div><p>Crear Nuevo Reto</p></div></Route>
+          <Route path="/ProfesorNuevaActividad">
+            <div><p>Crear Nueva Actividad</p></div>
+          </Route>
         </Switch>
       </Router>
     </Provider>
