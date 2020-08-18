@@ -60,3 +60,35 @@ export const infoPerfilEstudiante = (user,pass) => {
         });
   });
 };
+
+
+export const infoPerfilProfesor = (user,pass) => {
+    let query =  `query {
+  profesor(carne: ${user}, pin: ${pass}) {
+    foto
+    nombreProfesor
+    apellidoProfesor
+    carne
+
+    cursos {
+      nombreCurso
+    }
+    
+    email_1
+    email_2
+    telefono
+  }
+  `;
+    return new Promise((resolve) => {
+        axios_
+            .post(apiUrl, {
+                query: query,
+            })
+            .then((res) => {
+                resolve(res.data.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    });
+};

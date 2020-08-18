@@ -8,8 +8,10 @@ import {
 
 import Login from "./componets/login";
 import PerfilEstudiante from "./componets/perfil-estudiante"
+import Page404 from "./componets/page404"
 import store from "./store/index";
 import "./App.css";
+import PerfilProfesor from "./componets/perfil-professor";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Switch>
           <Route path="/" exact> <Login /> </Route>
           <Route path="/profile"><PerfilEstudiante/> </Route>
+          <Route path="/404"><Page404/></Route>
+          <Route path="/perfilProf"><PerfilProfesor/> </Route>
         </Switch>
       </Router>
     </Provider>

@@ -21,7 +21,7 @@ const Styles = styled.div`
 `;
 
 
-export const NavigationBar = () => (
+export const ProfessorBar = () => (
     <Styles>
         <Navbar expand="lg">
                 <Navbar.Brand><img src={logo} alt="logo" className="logoEdit" /></Navbar.Brand>
@@ -29,8 +29,7 @@ export const NavigationBar = () => (
                 <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                                 <Nav.Item><Nav.Link href="/profile" >Perfil</Nav.Link></Nav.Item>
-                                <Nav.Item><Nav.Link href="/404">Planificador</Nav.Link></Nav.Item>
-                                <Nav.Item><Nav.Link href="/404">Vida Estudiantil</Nav.Link></Nav.Item>
+                                <Nav.Item><Nav.Link href="/404">Curso</Nav.Link></Nav.Item>
 
                         </Nav>
                         <Nav>

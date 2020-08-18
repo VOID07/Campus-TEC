@@ -8,3 +8,10 @@ export const setProfileEstudiante =({estudiante}) => {
     payload: estudiante,
   };
 };
+
+export const setProfileProfesor =({profesor}) => {
+  return {
+    type: SET_PROFILE,
+    payload: profesor,
+  };
+};

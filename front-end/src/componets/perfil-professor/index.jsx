@@ -9,13 +9,12 @@ import Form from "react-bootstrap/Form";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
-import { setProfileEstudiante } from "./../../store/perfil/action";
-import "./perfil-estudiante.css";
-import liam from "../../img/liam.jpg";
-import { NavigationBar } from "../NavigationBar";
-import { infoPerfilEstudiante } from "./../../queries/axios";
+import { setProfileProfesor } from "./../../store/perfil/action";
+import "./perfil-professor.css";
+import { ProfessorBar } from "../ProfessorBar";
+import { infoPerfilProfesor } from "./../../queries/axios";
 // import setUserType from "../../store/tipo_usuario/action"
-class PerfilEstudiante extends React.Component {
+class PerfilProfesor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +22,7 @@ class PerfilEstudiante extends React.Component {
       user: props.user,
       password: props.password,
       logged: true,
-      estudiante: {},
+      profesor: {},
       cursos: [],
     };
     this.setLogged = this.setLogged.bind(this);
@@ -36,7 +35,7 @@ class PerfilEstudiante extends React.Component {
   async fetchProfile() {}
 
   async componentDidMount() {
-    let response = await infoPerfilEstudiante(
+    let response = await infoPerfilProfesor(
       this.state.user,
       this.state.password
     );
@@ -44,20 +43,21 @@ class PerfilEstudiante extends React.Component {
     if (response === undefined) {
       console.log("Error fetching");
     } else {
-      this.props.setProfileEstudiante({ estudiante: response.estudiante[0] });
-      this.setState({ estudiante: response.estudiante[0], lodadedProps: true });
+      this.props.setProfileProfesor({ profesor: response.profesor[0] });
+      this.setState({ profesor: response.profesor[0], lodadedProps: true });
     }
   }
-  renderPerfilEstudiante() {
+
+  renderPerfilProfesor() {
     return (
       <Container fluid>
-        <NavigationBar />
+        <ProfessorBar />
 
         <Container>
           <Row>
             <Col md={{ span: 2 }}>
               <div>
-                <Image src={this.state.estudiante.foto} thumbnail />
+                <Image src={this.state.profesor.foto} thumbnail />
               </div>
               <div>
                 <Button variant="link">Cambiar Foto</Button>{" "}
@@ -76,7 +76,7 @@ class PerfilEstudiante extends React.Component {
                         <Form.Control
                           plaintext
                           readOnly
-                          defaultValue={this.state.estudiante.nombre_estudiante}
+                          defaultValue={this.state.profesor.nombreProfesor}
                         />
                       </Col>
                     </Form.Group>
@@ -89,7 +89,7 @@ class PerfilEstudiante extends React.Component {
                           plaintext
                           readOnly
                           defaultValue={
-                            this.state.estudiante.apellido_estudiante
+                            this.state.profesor.apellidoProfesor
                           }
                         />
                       </Col>
@@ -102,33 +102,7 @@ class PerfilEstudiante extends React.Component {
                         <Form.Control
                           plaintext
                           readOnly
-                          defaultValue={this.state.estudiante.carne}
-                        />
-                      </Col>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="formPlaintextEmail">
-                      <Form.Label column sm="4">
-                        Universidad
-                      </Form.Label>
-                      <Col sm="8">
-                        <Form.Control
-                          plaintext
-                          readOnly
-                          defaultValue={
-                            this.state.estudiante.nombre_Universidad
-                          }
-                        />
-                      </Col>
-                    </Form.Group>
-                    <Form.Group as={Row} controlId="formPlaintextEmail">
-                      <Form.Label column sm="4">
-                        Sede
-                      </Form.Label>
-                      <Col sm="8">
-                        <Form.Control
-                          plaintext
-                          readOnly
-                          defaultValue={this.state.estudiante.nombre_Sede}
+                          defaultValue={this.state.profesor.carne}
                         />
                       </Col>
                     </Form.Group>
@@ -137,19 +111,13 @@ class PerfilEstudiante extends React.Component {
               </div>
             </Col>
             <Col md={{ span: 6 }}>
-              <div className="sectionTitle">Cursos Matriculados</div>
+              <div className="sectionTitle">Cursos</div>
               <div>
                 <Container striped bordered hover size="sm">
-                  <Row>
-                    <Col>Curso</Col>
-                    <Col>Código</Col>
-                    <Col>Grupo</Col>
-                  </Row>
-                  {this.state.lodadedProps ? this.state.estudiante.matriculas.map(matricula =>(
+                  {this.state.lodadedProps ? this.state.profesor.cursos.map(cursos =>(
                     <Row>
-                      <Col>{matricula.curso.nombreCurso}</Col>
-                      <Col>{matricula.curso.codigoCurso}</Col>
-                      <Col>{matricula.curso.cursoId}</Col>
+                      <Col>{cursos.nombreCurso}</Col>
+
                     </Row>
                   )): <Row></Row>}
                 </Container>
@@ -183,7 +151,7 @@ class PerfilEstudiante extends React.Component {
                         <Form.Control
                           plaintext
                           readOnly
-                          defaultValue={this.state.estudiante.email_1}
+                          defaultValue={this.state.profesor.email_1}
                         />
                       </Col>
                     </Form.Group>
@@ -195,7 +163,7 @@ class PerfilEstudiante extends React.Component {
                         <Form.Control
                           plaintext
                           readOnly
-                          defaultValue={this.state.estudiante.email_2}
+                          defaultValue={this.state.profesor.email_2}
                         />
                       </Col>
                     </Form.Group>
@@ -207,7 +175,7 @@ class PerfilEstudiante extends React.Component {
                         <Form.Control
                           plaintext
                           readOnly
-                          defaultValue={this.state.estudiante.telefono}
+                          defaultValue={this.state.profesor.telefono}
                         />
                       </Col>
                     </Form.Group>
@@ -216,19 +184,6 @@ class PerfilEstudiante extends React.Component {
               </div>
             </Col>
             <Col md={{ span: 6 }}>
-              <div className="sectionTitle">TEC-Colones</div>
-              <div>
-                <Form>
-                  <Form.Group as={Row} controlId="formPlaintextEmail">
-                    <Form.Label column sm="2">
-                      $TEC
-                    </Form.Label>
-                    <Col sm="10">
-                      <Form.Control plaintext readOnly defaultValue={this.state.estudiante.cantidad_TEColones} />
-                    </Col>
-                  </Form.Group>
-                </Form>
-              </div>
             </Col>
           </Row>
         </Container>
@@ -244,7 +199,7 @@ class PerfilEstudiante extends React.Component {
 
   render() {
     return this.state.logged
-      ? this.renderPerfilEstudiante()
+      ? this.renderPerfilProfesor()
       : this.redirectToLogin();
   }
 }
@@ -252,6 +207,6 @@ const mapStateToProps = (state) => {
   return state.login;
 };
 
-export default connect(mapStateToProps, { setProfileEstudiante })(
-  PerfilEstudiante
+export default connect(mapStateToProps, { setProfileProfesor })(
+  PerfilProfesor
 );
