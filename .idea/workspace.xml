@@ -37,14 +37,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="892ddf93-a83a-4b7b-8537-79ecc993c541" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/src/componets/NavigationBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/img/liam.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/componets/perfil-estudiante/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/componets/perfil-estudiante/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/componets/perfil-estudiante/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/componets/perfil-estudiante/perfil-estudiante.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +61,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Oska\Desktop\Repos\Campus-TEC\front-end\src\img" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Oska\Desktop\Repos\Campus-TEC\front-end\src\componets\perfil-estudiante" />
     </key>
@@ -78,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597637076269</updated>
-      <workItem from="1597637078828" duration="20881000" />
+      <workItem from="1597637078828" duration="28394000" />
     </task>
     <servers />
   </component>
