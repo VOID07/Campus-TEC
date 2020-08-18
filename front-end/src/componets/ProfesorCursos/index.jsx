@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import { setUserPass } from "../../store/tipo_usuario/action";
-import "/home/yenmari11/Escritorio/Campus-TEC/front-end/src/componets/ProfesorCursos/ProfesorCursos.css";
+import "./ProfesorCursos.css";
 import logo from "../../img/logo.svg";
 
 // import setUserType from "../../store/tipo_usuario/action"
