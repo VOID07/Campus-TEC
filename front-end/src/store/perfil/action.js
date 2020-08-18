@@ -1,10 +1,10 @@
-import { SET_USER_PASSWORD } from "./../actionTypes";
+import { SET_PROFILE } from "./../actionTypes";
 
 // Define la estructura del bindActionCreators, donde en este caso, user, password son los parámetros que recibe la función del action para guardar
 // en el payload
-export const setUserPass = (user, password) => {
+export const setProfileEstudiante =({estudiante}) => {
   return {
-    type: SET_USER_PASSWORD,
-    payload: {user, password},
+    type: SET_PROFILE,
+    payload: estudiante,
   };
 };

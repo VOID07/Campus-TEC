@@ -1,7 +1,7 @@
 const axios_ = require("axios");
 const apiUrl = require("./../constants/constants").apiUrl;
 
-const postUserPassEstudiante = (user, pass) => {
+export const postUserPassEstudiante = (user, pass) => {
   let query = `query {
         estudiante(carne: ${user}, pin: ${pass}) {
           iD
@@ -23,7 +23,7 @@ const postUserPassEstudiante = (user, pass) => {
   });
 };
 
-const infoPerfilEstudiante = (user,pass) => {
+export const infoPerfilEstudiante = (user,pass) => {
   let query =  `query {
     estudiante(carne: ${user}, pin: ${pass}) {
       apellido_estudiante
@@ -33,11 +33,10 @@ const infoPerfilEstudiante = (user,pass) => {
       email_2
       foto
       matriculas {
-        curso{
+        curso {
           nombreCurso
           codigoCurso
           cursoId
-
         }
         matriculaId
       }
@@ -45,7 +44,9 @@ const infoPerfilEstudiante = (user,pass) => {
       nombre_Sede
       nombre_Universidad
       telefono
-    }`;
+    }
+  }
+  `;
   return new Promise((resolve) => {
     axios_
         .post(apiUrl, {
@@ -59,5 +60,3 @@ const infoPerfilEstudiante = (user,pass) => {
         });
   });
 };
-
-export default postUserPassEstudiante;

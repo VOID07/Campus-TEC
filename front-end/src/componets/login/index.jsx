@@ -10,7 +10,7 @@ import { Redirect } from "react-router-dom";
 import { setUserPass } from "./../../store/tipo_usuario/action";
 import "./login.css";
 import logo from "../../img/logo.svg";
-import postUserPassEstudiante from "./../../queries/axios";
+import {postUserPassEstudiante} from "./../../queries/axios";
 // import setUserType from "../../store/tipo_usuario/action"
 class Login extends React.Component {
   constructor(props) {
