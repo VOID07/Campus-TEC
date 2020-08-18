@@ -18,3 +18,9 @@
     padding-top: 60px;
     justify-content: center;
   }
+  .sectionTitle{
+      justify-content: center;
+      font-family: "Roboto", sans-serif;
+      text-align: center;
+      font-size: 1.3rem;
+  }

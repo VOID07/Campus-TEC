@@ -64,7 +64,7 @@ class PerfilEstudiante extends React.Component {
               </div>
             </Col>
             <Col md={{ span: 4 }}>
-              <div>Información Personal</div>
+              <div className="sectionTitle">Información Personal</div>
               <div>
                 <Container>
                   <Form>
@@ -137,7 +137,7 @@ class PerfilEstudiante extends React.Component {
               </div>
             </Col>
             <Col md={{ span: 6 }}>
-              <div>Cursos Matriculados</div>
+              <div className="sectionTitle">Cursos Matriculados</div>
               <div>
                 <Container striped bordered hover size="sm">
                   <Row>
@@ -161,7 +161,7 @@ class PerfilEstudiante extends React.Component {
               <div>
                 <Container>
                   <Row>
-                    <Col>Información de Contacto</Col>
+                    <Col className="sectionTitle">Información de Contacto</Col>
                     <Col>
                       <Form>
                         <Form.Group controlId="formBasicCheckbox">
@@ -216,7 +216,7 @@ class PerfilEstudiante extends React.Component {
               </div>
             </Col>
             <Col md={{ span: 6 }}>
-              <div>TEC-Colones</div>
+              <div className="sectionTitle">TEC-Colones</div>
               <div>
                 <Form>
                   <Form.Group as={Row} controlId="formPlaintextEmail">

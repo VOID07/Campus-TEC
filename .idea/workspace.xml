@@ -39,7 +39,7 @@
     <list default="true" id="892ddf93-a83a-4b7b-8537-79ecc993c541" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/componets/perfil-estudiante/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/componets/perfil-estudiante/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/queries/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/queries/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/componets/perfil-estudiante/perfil-estudiante.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/componets/perfil-estudiante/perfil-estudiante.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597637076269</updated>
       <workItem from="1597637078828" duration="29688000" />
+      <workItem from="1597769193253" duration="644000" />
     </task>
     <servers />
   </component>
@@ -93,6 +94,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="537" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597677923490">
