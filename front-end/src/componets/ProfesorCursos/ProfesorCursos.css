@@ -21,9 +21,25 @@
     border-radius: 4px 4px 0px 0px;
   }
 
-  .loginBtn {
+
+  .buttonEdit {
     background-color: #153c6c;
+    position: absolute;
+    left: 80%; /*Coordenada X*/
+    top: 8%; /*Coordenada Y*/
+    font-size: 16px;
+    cursor: pointer;
   }
+
+  .buttonCerrarSesion {
+    background-color: #153c6c;
+    position: absolute;
+    left: 90%; /*Coordenada X*/
+    top: 8%; /*Coordenada Y*/
+    font-size: 10px;
+    cursor: pointer;
+  }
+
   .buttonCrearActividad {
     background-color: #153c6c;
     position: absolute;
@@ -58,6 +74,14 @@
     margin-bottom: 6px;
   }
 
+  .CardObjetivo {
+    align-self: center;
+    width: 25rem;
+    height: 30rem;
+    margin-top: calc(130px);
+    margin-bottom: 6px;
+  }
+
   .CardBody {
     display: flex;
     flex-direction: column;
@@ -78,3 +102,17 @@
     text-align: center;
     border-radius: 4px 4px 0px 0px;
   }
+
+
+
+  .CardMonto {
+    align-self: center;
+    width: 25rem;
+    height: 5rem;
+    position: absolute;
+    /*left: 2%; /*Coordenada X*/
+    top: 16%; /*Coordenada Y*/
+    background-color: #153c6c;
+    font-size: 15px;
+  }
+

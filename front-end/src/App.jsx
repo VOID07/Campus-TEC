@@ -25,6 +25,9 @@ function App() {
           <Route path="/ProfesorCursos">
           <ProfesorCursos />
           </Route>
+          <Route path="/NuevoReto">
+            <div><p>Este es un Nuevo Reto</p></div>
+          </Route>
           <Route path="/" exact>
             <Login />
           </Route>
